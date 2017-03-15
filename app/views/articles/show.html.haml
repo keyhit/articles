@@ -1,3 +1,4 @@
+= link_to 'All articles', articles_path
 %p
   %strong Title:
   %br/
@@ -6,4 +7,12 @@
   %strong Text:
   %br/
   = @article.text
-= link_to 'All articles', articles_path
+%h2 Add you comment:
+- form_for ([@article, @article.comments.build]) do |f|
+  %p= f.label :commenter
+  %br/
+  = f.text_field :commenter
+  %p= f.label.body
+  %br/
+  = f.text_area :body
+  = f.submit
