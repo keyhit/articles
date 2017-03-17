@@ -5,6 +5,10 @@ class CommetnsController < ApplicationController
     redirect_to article_path(@article)
   end
 
+  # def show
+  #   @comments = Comment.all
+  # end
+
   private
     def comments_params
       params.require(:comment).permit(:commenter, :body)
